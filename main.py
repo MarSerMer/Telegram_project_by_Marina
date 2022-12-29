@@ -5,6 +5,9 @@ from Picture_for_bot import show_picture
 from Game import get_number
 from Game import candies_game
 from Pogoda import get_weather
+import requests
+from Pogoda import ask_city
+from Pogoda import get_weather
 
 
 bot = telebot.TeleBot(my_token())
@@ -35,7 +38,7 @@ def other_words_from_user(message):
     if message.text == 'Fun':
         fun(message)
     elif message.text == 'Weather':
-        get_weather()
+        ask_city(message)
     elif message.text == 'Watch picture':
         show_picture(message)
     elif message.text == 'Play game':

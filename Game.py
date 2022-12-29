@@ -12,7 +12,7 @@ def candies_game(message):
     while bunch_of_candies > 28:
         if count % 2 == True:  # человек будет начинать
             ask_num = bot.send_message(message.chat.id, 'Enter how many sweets you take (from 1 to 28)' )
-            bot.register_next_step_handler(ask_num, get_number(ask_num))
+            bot.register_next_step_handler(ask_num, get_number)
             n = get_number(ask_num)
             bunch_of_candies -= n
             count += 1
